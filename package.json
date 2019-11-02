@@ -4,7 +4,7 @@
   "description": "A CMS in Node.js",
   "main": "app.js",
   "scripts": {
-    "npm start": "node app.js"
+    "start": "node app.js"
   },
   "keywords": [
     "CMS"
