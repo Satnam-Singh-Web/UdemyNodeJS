@@ -11,7 +11,7 @@ router.all('/*', (req, res, next) => {
 
 router.get('/', (req, res) => {
     Comment.find({
-        user: '5db5cb32d1575e2740f46c6b'
+        user: req.body.id
     }).populate('user').then(comments => {
 
         res.render('admin/comments', {
