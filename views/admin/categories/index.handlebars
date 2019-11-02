@@ -1,0 +1,48 @@
+<div class="container">
+    {{> home/form-msgs}}
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>Create Category</h1>
+            <form action="/admin/categories/create" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" class="form-control" id="title" placeholder="Enter title"
+                        autocomplete="false" required>
+                </div>
+                <button class="btn btn-primary" type="submit">Create Category</button>
+            </form>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Categories</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each categories}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{name}}</td>
+                        <td>{{generateTime date 'LLL LTS'}}</td>
+                        <td class="text-center"><a href="/admin/categories/edit/{{id}}" class="btn btn-info">Edit</a>
+                        </td>
+                        <td class="text-center">
+                            <form action="/admin/categories/{{id}}?_method=DELETE" method="post">
+                                <button class="btn btn-danger" type="submit">DELETE</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
