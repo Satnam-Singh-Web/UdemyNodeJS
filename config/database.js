@@ -1,4 +1,5 @@
-module.exports = {
-    //mongoDBUrl: 'mongodb://localhost:27017/cms'
-    mongoDBUrl: 'mongodb+srv://cmsAdmin:gur1313@CMS@udemymongodb-lsszv.mongodb.net/test?retryWrites=true&w=majority'
-};
+if(process.env.NODE_ENV === 'production'){
+    module.exports=require('./prod-database');
+}else{
+    module.exports=require('./dev-database');
+}
