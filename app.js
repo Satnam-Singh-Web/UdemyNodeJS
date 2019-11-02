@@ -112,8 +112,8 @@ const comments = require('./routes/admin/comments');
 /* using routes */
 app.use('/admin/comments', comments);
 
+const port = process.env.PORT||1234 ;
 
-
-app.listen(1234, () => {
+app.listen(port, () => {
     console.log(`Listening on port 1234`);
 });
